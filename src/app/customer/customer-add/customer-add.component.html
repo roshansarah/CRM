@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <div *ngIf="btnDisable" class="text-center text-success">Form has been Submitted !</div>
+            <div class="col-sm-4">
+                <form (ngSubmit)="onSubmit()" [formGroup]="customerForm">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" class="form-control" name="firstName" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && customerForm.get('firstName').errors }">
+                        <div *ngIf="submitted && customerForm.get('firstName').errors" class="invalid-feedback">
+                            <div *ngIf="customerForm.get('firstName').errors.required">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="firstName" class="form-control" name="lastName" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && customerForm.get('lastName').errors }">
+                        <div *ngIf="submitted && customerForm.get('lastName').errors" class="invalid-feedback">
+                            <div *ngIf="customerForm.get('lastName').errors.required">Last Name is required</div>
+                        </div>                      
+                    </div>
+                    <div class="form-group">
+                        <label for="">Date of Birth</label>
+                        <input type="text" placeholder="Datepicker" class="form-control" name="dateOfBirth" formControlName="dateOfBirth" bsDatepicker
+                            placement="right">
+                    </div>
+                    <div>
+                        <button class="btn btn-success" type="submit" [disabled]="btnDisable">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

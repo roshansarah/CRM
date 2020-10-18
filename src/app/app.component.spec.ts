@@ -1,12 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
+import { CustomerComponent } from './customer/customer.component';
+import { CustomerAddComponent } from './customer/customer-add/customer-add.component';
+import { CustomerListComponent } from './customer/customer-list/customer-list.component'; 
+import { Routes, RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
+
 describe('AppComponent', () => {
+
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        CustomerComponent,
+        CustomerAddComponent,
+        CustomerListComponent
       ],
+      imports:[],
     }).compileComponents();
   });
 
@@ -22,10 +34,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('customerApp');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('customerApp app is running!');
-  });
 });

@@ -1,0 +1,16 @@
+{
+  "customers": [
+    {
+      "firstName": "Jacob",
+      "lastName": "Mathew",
+      "dateOfBirth": "1998-05-11T14:00:00.000Z",
+      "id": 12
+    },
+    {
+      "firstName": "Mathew",
+      "lastName": "Thomas",
+      "dateOfBirth": "1950-05-08T14:00:00.000Z",
+      "id": 14
+    }
+  ]
+}
