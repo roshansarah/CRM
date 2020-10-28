@@ -1,10 +1,20 @@
 # CustomerApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
+and styles using Bootstrap.
+
+A mock server was used to simulate backend.
+
+#Functionality
+
+Two links(Add Customer & List Customer) have been provided in the page to add customer and also to view the added customers.
+You can edit/delete customer from List Customer Page.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+Run `npm run mock:server` in another terminal to simulate mock server.
 
 ## Code scaffolding
 
