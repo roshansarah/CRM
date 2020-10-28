@@ -5,7 +5,7 @@ and styles using Bootstrap.
 
 A mock server was used to simulate backend.
 
-#Functionality
+## Functionality
 
 Two links(Add Customer & List Customer) have been provided in the page to add customer and also to view the added customers.
 You can edit/delete customer from List Customer Page.
