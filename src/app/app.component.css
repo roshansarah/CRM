@@ -1,0 +1,17 @@
+#home{
+    padding-top:350px;
+    background:url('../assets/img/Building.jpg');
+    background-repeat: none;
+    background-size:cover;
+    min-height: 550px;
+    background-position: 50% 40%;
+    
+}
+
+.inner-home{
+    background-color: white;
+}
+
+.inner-about{
+    padding-top: 5%;
+}

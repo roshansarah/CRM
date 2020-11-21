@@ -2,10 +2,11 @@
   <div class="card">
   <div class="card-header"></div>
   <div class="card-body">
-   <div class="col-md-3 mt-4">
+   <div class="col-sm-4 mt-4">
       <input type="text" class="form-control" placeholder="Search By First Name" [(ngModel)]="searchTerm">
     </div>
-    <table class="table mt-4 border">
+    <div class="table-responsive"> 
+    <table class="table mt-4 border" >
         <thead class="thead-light">
           <tr>
             <th scope="col">#</th>
@@ -26,7 +27,8 @@
             <td><button class="btn btn-danger" (click)="onDeleteCustomer(customer.id)">Delete</button></td>
           </tr>
         </tbody>
-      </table>     
+      </table>   
+    </div>  
 </div>
 </div>
 </div>

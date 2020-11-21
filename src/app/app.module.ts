@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { TabsModule } from 'ngx-bootstrap/tabs';
 import {HttpClientModule} from '@angular/common/http';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer.component';
@@ -28,7 +28,7 @@ import { CustomerFilterPipe } from './shared/customer-filter.pipe';
     FormsModule,
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
-    TabsModule.forRoot(),
+    FontAwesomeModule,
     AppRoutingModule,
     HttpClientModule
   

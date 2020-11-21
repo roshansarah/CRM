@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {faCheckCircle} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'customerApp';
+  faCheckCircle =faCheckCircle;
+  navbarOpen=false;
+
+  toggleNavbar(){
+    this.navbarOpen=!this.navbarOpen;
+  }
+
+  scrollToSection(target){
+     console.log(target);
+     console.log('Hi')
+  }
  
 }
