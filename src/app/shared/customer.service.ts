@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {AngularFirestore} from '@angular/fire/firestore';
 import { Customer } from '../shared/customer.model';
 import { catchError} from 'rxjs/operators';
 import { throwError, Observable } from 'rxjs';
@@ -11,37 +11,49 @@ export class CustomerService {
 
   apiUrl:string= 'http://localhost:3000/customers'
 
-  constructor(private http:HttpClient) { }
+  constructor(private firestore:AngularFirestore) { }
 
-  //Save data in mock
-  createCustomer(customer:Customer):Observable<Customer>{
-    return this.http.post<Customer>(this.apiUrl,
-    customer).pipe(
-      catchError(this.errorHandler)
-    )
+  //Save data in firebase
+  createCustomer(customer:Customer){
+    
+    return this.firestore
+           .collection('customers')
+           .add({...customer})//send copy of customer obj
+           .then(res=>{
+             console.log(res)
+           })
+           
+         
+         
+  
   }
 
   //Retrieve customer from mock
-  getCustomers():Observable<Customer[]>{
-   return this.http.get<Customer[]>(this.apiUrl)
-    .pipe(catchError(this.errorHandler))
+    getCustomers(){
+
+    return this.firestore.collection('customers').snapshotChanges()
+   }
+
+  getCustomer(id:string){
+    
+    return this.firestore.collection('customers')
+    .doc(id)
+    .valueChanges()
+    
   }
 
-  getCustomer(id:number):Observable<Customer>{
-    return this.http.get<Customer>(`${this.apiUrl}/${id}`)
-    .pipe(catchError(this.errorHandler))
-  }
+   updateCustomer(customer:Customer,id:string){//need to change id to number and add return
+  
+    return this.firestore.collection('customers')
+    .doc(id)
+    .set(customer,{merge:true});
+   }
 
-  updateCustomer(customer:Customer,id:number):Observable<Customer>{
-    return this.http.put<Customer>(`${this.apiUrl}/${id}`,customer)
-    .pipe(catchError(this.errorHandler))
-  }
-
-  deleteCustomer(id:number):Observable<Customer>{
-     return this.http.delete<Customer>(`${this.apiUrl}/${id}`)
-     .pipe(
-      catchError(this.errorHandler)
-    )
+  deleteCustomer(id:string){//change id to munber
+     
+    return this.firestore.collection('customers')
+    .doc(id)
+    .delete()
   }
 
   //Handle Error

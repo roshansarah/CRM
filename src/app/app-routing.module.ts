@@ -6,10 +6,11 @@ import { CustomerListComponent } from './customer/customer-list/customer-list.co
 
 
 const appRoutes: Routes=[
-  {path:'',redirectTo:'add',pathMatch:'full'},
+  // {path:'',redirectTo:'add',pathMatch:'full'},
   {path:'add',component:CustomerAddComponent},
   {path:'edit/:id',component:CustomerAddComponent},
-  {path:'customer',component:CustomerListComponent},
+  {path:'list',component:CustomerListComponent},
+
 ]
 
 

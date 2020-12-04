@@ -18,8 +18,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let customer of customers | customerFilter: searchTerm">
-            <th scope="row">{{customer.id}}</th>
+          <tr *ngFor="let customer of customers | async ; index as i ">
+            <th scope="row">{{i+1}}</th>
             <td>{{customer.firstName}}</td>
             <td>{{customer.lastName}}</td>
             <td>{{customer.dateOfBirth | date}}</td>
@@ -29,6 +29,7 @@
         </tbody>
       </table>   
     </div>  
+    
 </div>
 </div>
 </div>

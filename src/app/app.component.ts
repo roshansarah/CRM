@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {faCheckCircle} from '@fortawesome/free-solid-svg-icons';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +13,16 @@ export class AppComponent {
   faCheckCircle =faCheckCircle;
   navbarOpen=false;
 
+  constructor(private modalService:NgbModal){
+
+  }
+
   toggleNavbar(){
     this.navbarOpen=!this.navbarOpen;
   }
 
-  scrollToSection(target){
-     console.log(target);
-     console.log('Hi')
-  }
+ openForm(){
+   const modalLogin = this.modalService.open(LoginComponent)
+ }
  
 }
