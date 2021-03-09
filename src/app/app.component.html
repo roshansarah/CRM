@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>CRM App</title>
 </head>
-<body> -->
+<body> 
   
   <!-- NAVBAR -->
-  <!-- <nav class="navbar navbar-expand-sm fixed-top bg-dark navbar-dark" id="main-nav">
+<nav class="navbar navbar-expand-sm fixed-top bg-dark navbar-dark" id="main-nav">
     <div class="container">
       <a href="#" class="navbar-brand">CRM</a>
       <button class="navbar-toggler" (click)="toggleNavbar()">
@@ -18,70 +18,24 @@
       <div class="collapse navbar-collapse" [ngClass]="{'show':navbarOpen}">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item" >
-              <a href="#home" class="nav-link">Home</a>
+              <a  class="nav-link" routerLink='/home'>Home</a>
             </li>
             <li class="nav-item">
               <a href="#about" class="nav-link">About</a>
             </li>
             <li class="nav-item">
-              <a href="#home" class="nav-link" (click)="openForm()">Login/SignUp</a>
+              <a class="nav-link" routerLink='/login' >Login</a>
             </li>
           </ul>
       </div>
     </div>
-  </nav> -->
+  </nav> 
 
-  <!-- HOME SECTION -->
-
-  <!-- <header id="home">
-      <div class="row inner-home">
-        <div class="col">
-          <h2>CRM Software</h2>
-          <p class="lead">Build everlasting Customer Relationship with the smartest CRM</p>
-        </div>
-      </div>
-  </header>  -->
-
-  <!-- ABOUT SECTION -->
-  <!-- <section id="about py-5">
-   <div class="container inner-about">
-     <div class="row">
-        <div class="col-md-6">
-         <img src="../assets/img/explore-section1.jpg" alt="Explore" class="img-fluid rounded-circle">
-        </div>
-       <div class="col-md-6 mt-3">
-          <h3>Explore & Connect</h3>
-          <div class="d-flex">
-             <div>
-               <fa-icon  [icon]="faCheckCircle"></fa-icon>
-             </div>
-             <div>
-                Reach customers across every channel
-             </div>
-          </div>
-          <div class="d-flex">
-              <div>
-                <fa-icon  [icon]="faCheckCircle"></fa-icon>
-              </div>
-              <div>
-                  Get real time notifications
-              </div>
-           </div>
-           <div class="d-flex">
-              <div>
-                <fa-icon  [icon]="faCheckCircle"></fa-icon>
-              </div>
-              <div>
-                  Measure and Manage sales performance
-              </div>
-           </div>
-       </div>     
-     </div>
-   </div>
-  </section> -->
+<router-outlet></router-outlet>
+<!-- <app-home></app-home> -->
 
   <!-- FOOTER  -->
-<!-- <footer id="footer" class="bg-dark p-3 mt-4">
+<footer id="footer" class="bg-dark p-3 mt-4">
 <div class="container">
   <div class="row">
     <div class="col text-center text-white">
@@ -93,7 +47,8 @@
 </div>
 </footer>
 </body>
-</html> -->
-<app-customer></app-customer>
+</html>
+
+
 
 

@@ -27,6 +27,7 @@ export class CustomerAddComponent implements OnInit {
 
   ngOnInit(): void {
 
+     console.log("Customer Add")
        this.route.params.subscribe((params:Params)=>{
         
         this.id =params['id'];

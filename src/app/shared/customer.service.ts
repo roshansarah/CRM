@@ -13,7 +13,7 @@ export class CustomerService {
 
   constructor(private firestore:AngularFirestore) { }
 
-  //Save data in firebase
+  //Save data in firestore
   createCustomer(customer:Customer){
     
     return this.firestore
@@ -22,13 +22,9 @@ export class CustomerService {
            .then(res=>{
              console.log(res)
            })
-           
-         
-         
-  
   }
 
-  //Retrieve customer from mock
+  //Retrieve data from firestore
     getCustomers(){
 
     return this.firestore.collection('customers').snapshotChanges()

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import {faCheckCircle} from '@fortawesome/free-solid-svg-icons';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +9,6 @@ import { LoginComponent } from './login/login.component';
 })
 export class AppComponent {
   title = 'customerApp';
-  faCheckCircle =faCheckCircle;
   navbarOpen=false;
 
   constructor(private modalService:NgbModal){
