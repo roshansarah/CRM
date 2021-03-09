@@ -1,0 +1,51 @@
+ <div class="container">
+    <div>
+        <h4>Login</h4>
+        <!-- <button type="button" class="close" (click)="activeModal.dismiss('cross click')">
+          <span>&times;</span>
+        </button> -->
+    </div>
+    <div>
+            <form>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <fa-icon  [icon]="faEnvelope"></fa-icon></span> 
+                    </div>
+                    <input type="text" class="form-control" placeholder="Username" #userName required>
+                </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">   
+                            <span class="input-group-text"><fa-icon [icon]="faKey"></fa-icon></span>
+                        </div>
+                    <input type="password" class="form-control" placeholder="Password" #password required>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit" (click)="login(userName.value,password.value)">Login</button>
+                <div>
+                    <a routerLink="/forgot-password" >Forgot Password?</a>
+                </div>
+
+                <div>
+                    <a routerLink="/register">Register</a>
+                </div>
+                </form>
+    </div> 
+          
+    <!-- <h3 class="mb-3">Sign Up Today</h3>
+    <form>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+               <span class="input-group-text"> <fa-icon  [icon]="faUser"></fa-icon></span> 
+            </div>
+            <input type="text" class="form-control" placeholder="Username">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">   
+                <span class="input-group-text"><fa-icon [icon]="faKey"></fa-icon></span>
+            </div>
+            <input type="password" class="form-control" placeholder="Password">
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Submit</button>
+
+    </form> -->
+<!-- </div> -->
+
