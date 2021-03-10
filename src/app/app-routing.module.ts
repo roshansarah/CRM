@@ -10,7 +10,7 @@ import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.
 
 
 const appRoutes: Routes=[
-  // {path:'',redirectTo:'home',pathMatch:'full'},
+  {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home', component:HomeComponent},
   {path:'add',component:CustomerAddComponent},
   {path:'edit/:id',component:CustomerAddComponent},
