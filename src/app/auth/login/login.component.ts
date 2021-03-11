@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons';
 // import {NgbActiveModal,NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '../../shared/auth.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(email,password){
-    this.authService.login(email,password)
+  login(form:NgForm){
+    
+    if(form.invalid){
+      return;
+    }
+
+    this.authService.login(form.value.email,form.value.password)
   }
 }
