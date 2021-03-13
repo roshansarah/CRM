@@ -1,29 +1,27 @@
-<div class="container">
-    <div >
-        <h4>Register</h4>
-        <!-- <button type="button" class="close" (click)="activeModal.dismiss('cross click')"> 
-           <span>&times;</span>
-        </button> -->
-    </div>
-    <div>
-            <form>
+<div class="container cardSpace">
+    <div class="card py-4">
+        <h4 class="text-center">Register</h4>
+   
+    <div class="card-body">
+            <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <!-- <span class="input-group-text"> <fa-icon  [icon]="faUser"></fa-icon></span>  -->
+                        <span class="input-group-text"> <fa-icon  [icon]="faEnvelope"></fa-icon></span>  
                     </div>
                     <input type="email" class="form-control" placeholder="Email" #email required>
                 </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">   
-                            <!-- <span class="input-group-text"><fa-icon [icon]="faKey"></fa-icon></span> -->
+                         <span class="input-group-text"><fa-icon [icon]="faKey"></fa-icon></span>
                         </div>
                     <input type="password" class="form-control" placeholder="Password" #password required>
                     </div>
-                    <button class="btn btn-primary btn-block" type="submit" (click)="register(email.value,password.value)">Register</button>
+                    <button class="btn btn-color btn-block" type="submit">Register</button>
                 <div>
                     <span>Already Have an account? <a routerLink='/login'>Login </a></span>
                 </div>
                 </form>
+            </div>       
     </div> 
           
     <!-- <h3 class="mb-3">Sign Up Today</h3>

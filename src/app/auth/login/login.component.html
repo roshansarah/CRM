@@ -1,8 +1,7 @@
- <div class="container login">
+ <div class="container cardSpace">
 
  <div class="card py-4">
         <h4 class="text-center">Login</h4>
- <div>
 <div class="card-body">   
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">     
         <div class="input-group">
@@ -11,23 +10,19 @@
             </div>
                 <input type="text" class="form-control" name="email" placeholder="Email" #email="ngModel" ngModel  required>        
         </div>
-                <div  *ngIf="loginForm.submitted && email.invalid" class="text-danger">
-                    <div *ngIf="email.errors.required">
-                        Email is required
-                    </div>
-                </div>
+               
         <div class="input-group mt-4">
             <div class="input-group-prepend">   
                 <span class="input-group-text"><fa-icon [icon]="faKey"></fa-icon></span>
             </div>
                  <input type="password" class="form-control" placeholder="Password" name="password" #password="ngModel" ngModel required>
         </div>
-        <div  *ngIf="loginForm.submitted && password.invalid" class="text-danger">
-                <div *ngIf="password.errors.required">
-                    Password is required
+        <div  *ngIf="loginForm.submitted && (email.invalid ||  password.invalid)" class="text-danger">
+                <div *ngIf="password.errors.required || email.errors.required ">
+                    Incorrect Email or Password
                 </div>
             </div>
-                <button class="btn btn-primary btn-block mt-4" type="submit">Login</button>
+                <button class="btn btn-color btn-block mt-4" type="submit">Login</button>
         <div class="d-flex p-3 justify-content-between">
                 <a routerLink="/register">Register</a>
                 <a  routerLink="/forgot-password" >Forgot Password?</a>
