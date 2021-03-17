@@ -27,6 +27,25 @@ html, body{
     text-align: center;
 }
 
+.customerSpace{
+    padding-top:135px;
+    border: 2 px solid red;
+    padding-bottom: 125px; 
+}
+
+/* /* .nav-tabs{
+    border: solid 1 px black;
+} * */
+
+.nav-tabs .nav-link.active{
+    background: #e2e2e2;
+}
+
+/* .tab-content{
+    width:100%;
+    background:red; 
+} */
+
 
 
   

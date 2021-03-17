@@ -48,7 +48,8 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     NgbModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    // AngularFirestoreModule
+    // AngularFirestoreModule,
+
   
   ],
 //  entryComponents:[

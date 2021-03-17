@@ -86,7 +86,7 @@ export class CustomerAddComponent implements OnInit {
       this.customerForm = new FormGroup({
         firstName: new FormControl(firstName,Validators.required),
         lastName: new FormControl(lastName,Validators.required),
-        //dateOfBirth:new FormControl(dateOfBirth)
+        dateOfBirth:new FormControl(dateOfBirth)
       })
   }
 }
