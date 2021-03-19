@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import { faCalendar} from '@fortawesome/free-solid-svg-icons';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {Customer} from '../../shared/customer.model'
 import { CustomerService } from '../../shared/customer.service';
@@ -11,6 +13,9 @@ import { last } from 'rxjs/operators';
   styleUrls: ['./customer-add.component.css']
 })
 export class CustomerAddComponent implements OnInit {
+
+  model:NgbDateStruct;
+  faCalender=faCalendar;
 
   id:string//need to check
 
@@ -49,10 +54,17 @@ export class CustomerAddComponent implements OnInit {
       return
     }
 
+   
+    //console.log(this.customerForm.value)
+    // let ngbDate = this.customerForm.value.dateOfBirth
+    // let myDate = new Date(ngbDate.year, ngbDate.month -1, ngbDate.day )
+
     let customer = this.customerForm.value
+    // customer['dateOfBirth'] = myDate
+    // console.log('customer',customer)
     
     if(this.editMode){
-       this.customerService.updateCustomer(this.customerForm.value,this.id)
+       this.customerService.updateCustomer(customer,this.id)
        .then(result=>console.log(result))
     }else{
       this.customerService.createCustomer(customer)
@@ -71,22 +83,35 @@ export class CustomerAddComponent implements OnInit {
     let firstName=''
     let lastName=''
     let dateOfBirth=null
+    let email=''
+    let mobile=''
+    let comment
 
     if(this.editMode){
       this.customerService.getCustomer(this.id).subscribe(result=>{
          console.log('result',result)
+         
         this.customerForm.setValue({
           firstName:result['firstName'],
            lastName:result['lastName'],
-          //dateOfBirth:new Date(result.dateOfBirth)//Added this to fix binding issue in form
+           email:result['email'],
+           mobile:result['mobile'],
+           comment:result['comment'],
+           dateOfBirth:result['dateOfBirth']
+           //dateOfBirth:new Date(result['dateOfBirth'])//Added this to fix binding issue in form
         })
       })
+
+      
     }
 
       this.customerForm = new FormGroup({
         firstName: new FormControl(firstName,Validators.required),
         lastName: new FormControl(lastName,Validators.required),
-        dateOfBirth:new FormControl(dateOfBirth)
+        dateOfBirth:new FormControl(dateOfBirth),
+        email:new FormControl(email),
+        mobile:new FormControl(mobile),
+        comment:new FormControl(comment)
       })
   }
 }

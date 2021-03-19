@@ -19,6 +19,7 @@ export class CustomerListComponent implements OnInit {
   ngOnInit(): void {
 
     this.getCustomers()
+  
 
   }
 
@@ -38,9 +39,8 @@ export class CustomerListComponent implements OnInit {
             const data = d.payload.doc.data() as Customer
             const id = d.payload.doc.id
               return {id,...data} 
-          })
-           
-        })
+          })         
+        })        
       )   
   }
 }

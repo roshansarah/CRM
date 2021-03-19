@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {HttpClientModule} from '@angular/common/http';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 // import { library } from '@fortawesome/fontawesome-svg-core';
-// import { faUser } from '@fortawesome/free-solid-svg-icons';
+
 //  import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AngularFireModule} from '@angular/fire';

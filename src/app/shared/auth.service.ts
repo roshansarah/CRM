@@ -27,7 +27,7 @@ export class AuthService{
     async login(email:string,password:string){
         var result = await this.fireAuth.signInWithEmailAndPassword(email,password);
         
-        this.router.navigate(['/add'])
+        this.router.navigate(['/customer'])
     }
 
     //Register

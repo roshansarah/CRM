@@ -14,7 +14,7 @@ export class CustomerService {
   constructor(private firestore:AngularFirestore) { }
 
   //Save data in firestore
-  createCustomer(customer:Customer){
+  async createCustomer(customer:Customer){
     
     return this.firestore
            .collection('customers')

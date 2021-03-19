@@ -1,18 +1,19 @@
 <div class="container customerSpace">
         <nav ngbNav #nav="ngbNav"  class="nav-tabs">
             <ng-container ngbNavItem >
-             <a ngbNavLink>Add Customers</a>        
+             <a ngbNavLink routerLink="list">List Customers</a>   
+             <a ngbNavLink routerLink="add">Add Customers</a>      
              <ng-template ngbNavContent>
-                    <app-customer-add></app-customer-add>
+                    <router-outlet></router-outlet>
              </ng-template>
             </ng-container>
     
-            <ng-container ngbNavItem >
-                <a ngbNavLink>List Customers</a>        
+            <!-- <ng-container ngbNavItem >
+                <a ngbNavLink routerLink="add">Add Customers</a>        
                 <ng-template ngbNavContent >
-                        <app-customer-list></app-customer-list>
+                        <router-outlet name="outlet1"></router-outlet>
                 </ng-template>
-            </ng-container>
+            </ng-container> -->
         </nav>
         <div [ngbNavOutlet]="nav" class=""></div>  
     </div>

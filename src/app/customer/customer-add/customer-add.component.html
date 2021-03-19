@@ -3,8 +3,9 @@
         <div class="card-header"></div>
         <div class="card-body">
             <div *ngIf="btnDisable" class="text-center text-success">Form has been Submitted !</div>
-            <div class="col-sm-4">
-                <form (ngSubmit)="onSubmit()" [formGroup]="customerForm">
+            <form (ngSubmit)="onSubmit()" [formGroup]="customerForm">
+             <div class="row">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
                         <input type="text" id="firstName" class="form-control" name="firstName" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && customerForm.get('firstName').errors }">
@@ -12,6 +13,7 @@
                             <div *ngIf="customerForm.get('firstName').errors.required">First Name is required</div>
                         </div>
                     </div>
+            
                     <div class="form-group">
                         <label for="lastName">Last Name</label>
                         <input type="text" id="firstName" class="form-control" name="lastName" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && customerForm.get('lastName').errors }">
@@ -19,7 +21,24 @@
                             <div *ngIf="customerForm.get('lastName').errors.required">Last Name is required</div>
                         </div>                      
                     </div>
-                    <!-- <div class="form-group">
+               
+                    <div class="form-group">
+                            <label for="dateOfBirth">Date of Birth</label>
+                            <div class="input-group">                        
+                            <input type="text" placeholder="yyyy-mm-dd" class="form-control" name="dateOfBirth" formControlName="dateOfBirth" ngbDatepicker #d="ngbDatepicker"
+                                placement="right">
+                                <div class="input-group-append">
+                                   <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"><fa-icon [icon]="faCalender"></fa-icon></button>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="comment">Comment</label>
+                            <textarea class="form-control" name="comment" id="comment" cols="5" rows="5" formContolName="comment"></textarea>
+                         </div>
+           </div>
+            <div class="col-sm-6">
+                     <div class="form-group">
                             <label for="email">Email</label>
                             <input type="text" id="email" class="form-control" name="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && customerForm.get('email').errors }">
                             <div *ngIf="submitted && customerForm.get('email').errors" class="invalid-feedback">
@@ -32,20 +51,15 @@
                             <div *ngIf="submitted && customerForm.get('mobile').errors" class="invalid-feedback">
                             <div *ngIf="customerForm.get('mobile').errors.required">Mobile is required</div>
                             </div>                      
-                    </div> -->
-                    <div class="form-group">
-                        <label for="dateOfBirth">Date of Birth</label>
-                        <input type="text" placeholder="Datepicker" class="form-control" name="dateOfBirth" formControlName="dateOfBirth" bsDatepicker
-                            placement="right">
                     </div>
-                    <div class="form-group">
-                       <label for="comment">Comment</label>
-                       <textarea class="form-control" name="comment" id="comment" cols="5" rows="5"></textarea>
-                    </div>
-                    <div>
-                        <button class="btn btn-success" type="submit" [disabled]="btnDisable">Submit</button>
-                    </div>
-                </form>
-            </div>
+                    
+                    
+                </div>  
+            </div>  
+            <div class="text-center mt-4">
+                    <button class="btn btn-success" type="submit" [disabled]="btnDisable">Submit</button>
+                </div> 
+            </form>
+           
          </div>
 </div>

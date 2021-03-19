@@ -1,4 +1,3 @@
-<!-- <div class="container"> -->
   <div class="card">
   <div class="card-header"></div>
   <div class="card-body">
@@ -22,14 +21,13 @@
             <th scope="row">{{i+1}}</th>
             <td>{{customer.firstName}}</td>
             <td>{{customer.lastName}}</td>
-            <td>{{customer.dateOfBirth | date}}</td>
-            <td><button class="btn btn-info" [routerLink]="['/edit',customer.id]">Edit</button></td>
+            <td>{{ customer.dateOfBirth.day }}/{{customer.dateOfBirth.month}}/{{customer.dateOfBirth.year}}</td>
+            <td><button class="btn btn-info" [routerLink]="['edit',customer.id]">Edit</button></td>
             <td><button class="btn btn-danger" (click)="onDeleteCustomer(customer.id)">Delete</button></td>
           </tr>
         </tbody>
       </table>   
-    </div>  
-    
+    </div>     
 </div>
 </div>
-<!-- </div> -->
+
