@@ -8,18 +8,18 @@ import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
+import {AuthGuard} from './shared/guard/auth.guard';
 
 
 const appRoutes: Routes=[
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home', component:HomeComponent},
-  {path:'customer',component:CustomerComponent, children:[
-    {path:'', component:CustomerListComponent},
-    {path:'add',component:CustomerAddComponent},
-    {path:'edit/:id',component:CustomerAddComponent},
-    {path:'list', redirectTo:'',component:CustomerListComponent},
-   
-    
+  {path:'customer',component:CustomerComponent,canActivate:[AuthGuard] ,children:[
+  {path:'', component:CustomerListComponent},
+  {path:'add',component:CustomerAddComponent},
+  {path:'edit/:id',component:CustomerAddComponent},
+  {path:'list', redirectTo:'',component:CustomerListComponent},
+  {path:'**', redirectTo:'home'}    
   ]},
   
   // {path:'list',component:CustomerListComponent},
